@@ -20,7 +20,12 @@ app.get('/', (req, res) => {
 
 const Song = require("./model/song.model")
 app.get('/songs', async (req, res) => {
-    const songs = await Song.find({});
+    const songs = {
+        name: "Buon hay vui",
+        path: "http://kdhfkd.com",
+        num: 10
+    }
+
 
     res.json({
         code: 200,
