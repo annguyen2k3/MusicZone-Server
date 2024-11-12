@@ -11,6 +11,10 @@ database.connect();
 
 app.use(cors())
 
+app.get('/', (req, res) => {
+    res.send("Trang chu")
+})
+
 const Song = require("./model/song.model")
 app.get('/songs', async (req, res) => {
     const songs = await Song.find({});
