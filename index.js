@@ -12,7 +12,10 @@ database.connect();
 app.use(cors())
 
 app.get('/', (req, res) => {
-    res.send("Trang chu")
+    res.json({
+        code: 200,
+        message: "Trang chủ"
+    })
 })
 
 const Song = require("./model/song.model")
