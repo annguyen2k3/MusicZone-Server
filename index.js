@@ -1,13 +1,15 @@
 const express = require("express");
-const app = express();
-
 require("dotenv").config();
+const cors = require('cors')
+
+const app = express();
+const port = process.env.PORT;
 
 //Database
 const database = require("./config/database");
 database.connect();
 
-const port = process.env.PORT;
+app.use(cors())
 
 const Song = require("./model/song.model")
 app.get('/songs', async (req, res) => {
